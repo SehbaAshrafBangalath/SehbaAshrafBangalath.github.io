@@ -3,81 +3,68 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SOC Terminal | Sehba Ashraf</title>
+<title>Sehba Ashraf | SOC Analyst Portfolio</title>
 
 <style>
-/* ===== BASE ===== */
 body {
     margin: 0;
-    font-family: 'Segoe UI', monospace;
-    background: #05070f;
-    color: #d1d5db;
-    overflow-x: hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b1220;
+    color: #e5e7eb;
 }
 
-/* GRID BACKGROUND */
-body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(0,255,140,0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0,255,140,0.05) 1px, transparent 1px);
-    background-size: 60px 60px;
-    z-index: -2;
+/* HEADER */
+header {
+    background: #050816;
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* HEADER TERMINAL BAR */
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 20px;
-    background: rgba(10,15,25,0.85);
-    border-bottom: 1px solid rgba(0,255,140,0.2);
-    backdrop-filter: blur(10px);
-}
-
-.title {
-    color: #00ff9f;
+.name {
+    font-size: 24px;
     font-weight: bold;
-}
-
-.status {
     color: #38bdf8;
 }
 
-/* CONTAINER */
+.role {
+    color: #00ff9f;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+nav a {
+    margin-right: 15px;
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* LAYOUT */
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 25px;
 }
 
-/* SECTIONS */
+/* SECTION */
 h2 {
     color: #38bdf8;
     border-left: 4px solid #00ff9f;
-    padding-left: 12px;
+    padding-left: 10px;
     margin-top: 40px;
-    font-size: 18px;
 }
 
-/* GLASS CARD */
+/* CARD */
 .card {
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.08);
-    border-left: 2px solid rgba(0,255,140,0.5);
     padding: 18px;
-    margin-top: 15px;
     border-radius: 10px;
-    backdrop-filter: blur(8px);
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-left: 2px solid #00ff9f;
-    box-shadow: 0 10px 25px rgba(0,255,140,0.08);
+    margin-top: 15px;
 }
 
 /* TAGS */
@@ -86,69 +73,89 @@ h2 {
     padding: 4px 10px;
     margin: 3px;
     font-size: 12px;
-    border-radius: 999px;
-    background: rgba(0,255,140,0.08);
-    color: #00ff9f;
-    border: 1px solid rgba(0,255,140,0.2);
+    border-radius: 20px;
+    background: rgba(56,189,248,0.1);
+    color: #38bdf8;
+    border: 1px solid rgba(56,189,248,0.3);
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn {
     display: inline-block;
     margin-top: 10px;
     padding: 7px 10px;
-    border: 1px solid #00ff9f;
-    color: #00ff9f;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
     border-radius: 6px;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: #00ff9f;
+    background: #38bdf8;
     color: #000;
 }
 
-/* TERMINAL TEXT */
-.terminal {
-    font-family: monospace;
-    color: #9ca3af;
+/* INTERACTIVE PROJECT CARD */
+.project {
+    cursor: pointer;
+}
+
+.details {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #cbd5e1;
 }
 </style>
+
+<script>
+function toggleDetails(id){
+    var x = document.getElementById(id);
+    if(x.style.display === "block"){
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+</script>
 
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-<div class="title">root@SOC-terminal:~/portfolio</div>
-<div class="status">● SYSTEM ONLINE</div>
+<!-- HEADER -->
+<header>
+<div class="name">Sehba Ashraf Bangalath</div>
+<div class="role">
+SOC Analyst (Aspiring) | Cybersecurity | Network Security | Vulnerability Research
 </div>
+
+<nav>
+<a href="#profile">Profile</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#education">Education</a>
+<a href="#certs">Certifications</a>
+<a href="#contact">Contact</a>
+<a href="https://github.com/" target="_blank">GitHub</a>
+<a href="#">LinkedIn</a>
+</nav>
+</header>
 
 <div class="container">
 
 <!-- PROFILE -->
-<h2>01. PROFILE</h2>
-<div class="card terminal">
-Cybersecurity & Digital Forensics student focused on SOC analysis, vulnerability research, and network security.
-Experience in OWASP Top 10 testing, CVE mapping, and Linux-based investigations.
-Seeking SOC Analyst / Cybersecurity Internship roles.
-</div>
-
-<!-- IDENTITY -->
-<h2>02. IDENTITY</h2>
+<h2 id="profile">Profile Summary</h2>
 <div class="card">
-<b>Name:</b> Sehba Ashraf Bangalath<br>
-<b>Role:</b> SOC Analyst (Aspiring)<br>
-<b>Location:</b> Auckland, New Zealand<br>
-<b>Email:</b> sehbaabi@gmail.com<br>
-<b>Phone:</b> +64 210 871 4728
+Cybersecurity and Digital Forensics student with hands-on SOC-style experience in vulnerability assessment, network security, and web application testing. Focused on attack surface analysis, OWASP Top 10, CVE mapping, and Linux-based investigations.
 </div>
 
 <!-- SKILLS -->
-<h2>03. SECURITY TOOLKIT</h2>
+<h2 id="skills">Technical Skills</h2>
 <div class="card">
 <span class="tag">Nmap</span>
 <span class="tag">Nikto</span>
@@ -161,55 +168,78 @@ Seeking SOC Analyst / Cybersecurity Internship roles.
 </div>
 
 <!-- EXPERIENCE -->
-<h2>04. EXPERIENCE LOGS</h2>
+<h2 id="experience">Experience</h2>
 
 <div class="card">
-<b>Network Engineer Intern</b> | Cloudix Technologies
+<b>Network Engineer Intern</b>
 <ul>
-<li>Network configuration & monitoring</li>
-<li>Security hardening & troubleshooting</li>
-<li>Incident-level network issue resolution</li>
+<li>Network configuration and monitoring</li>
+<li>Security troubleshooting and uptime improvement</li>
 </ul>
 </div>
 
 <div class="card">
-<b>Web Developer Intern</b> | Brain O Vision
+<b>Web Developer Intern</b>
 <ul>
-<li>Web application development</li>
+<li>Web development and UI optimization</li>
 <li>Basic secure coding practices</li>
-<li>UI optimization & debugging</li>
 </ul>
 </div>
 
 <!-- PROJECTS -->
-<h2>05. SECURITY OPERATIONS (PROJECTS)</h2>
+<h2 id="projects">Security Operations (Interactive)</h2>
+
+<!-- PROJECT 1 -->
+<div class="card project" onclick="toggleDetails('p1')">
+<b>Network Attack Surface Analysis (TryHackMe)</b>
+<div id="p1" class="details">
+<li>Nmap reconnaissance & service enumeration</li>
+<li>Identified exposed ports & vulnerabilities</li>
+<li>Mapped attack surface risks</li>
+
+<a class="btn" href="https://github.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/blob/main/reports/PROJECT_FIRST.pdf" target="_blank">
+GitHub View
+</a>
+
+<a class="btn" href="https://raw.githubusercontent.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/main/reports/PROJECT_FIRST.pdf" target="_blank">
+View Report
+</a>
+</div>
+</div>
+
+<!-- PROJECT 2 -->
+<div class="card project" onclick="toggleDetails('p2')">
+<b>OWASP Juice Shop Security Testing</b>
+<div id="p2" class="details">
+<li>Gobuster & WhatWeb scanning</li>
+<li>Auth & injection flaw detection</li>
+<li>OWASP Top 10 mapping</li>
+
+<a class="btn" href="https://github.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/blob/main/reports/OWASP_Juice_Shop_Report.pdf" target="_blank">
+GitHub View
+</a>
+
+<a class="btn" href="https://raw.githubusercontent.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/main/reports/OWASP_Juice_Shop_Report.pdf" target="_blank">
+View Report
+</a>
+</div>
+</div>
+
+<!-- EDUCATION -->
+<h2 id="education">Education</h2>
 
 <div class="card">
-<b>Network Attack Surface Analysis</b>
-<ul>
-<li>Performed Nmap reconnaissance & enumeration</li>
-<li>Identified exposed services & risks</li>
-<li>Mapped attack surface vulnerabilities</li>
-</ul>
-
-<a class="btn" href="https://github.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/blob/main/reports/PROJECT_FIRST.pdf">GitHub</a>
-<a class="btn" href="https://raw.githubusercontent.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/main/reports/PROJECT_FIRST.pdf">Report</a>
+<b>Master of Cybersecurity & Digital Forensics</b><br>
+Auckland University of Technology
 </div>
 
 <div class="card">
-<b>OWASP Juice Shop Security Testing</b>
-<ul>
-<li>Gobuster & WhatWeb scanning</li>
-<li>Authentication flaw detection</li>
-<li>OWASP Top 10 mapping & reporting</li>
-</ul>
-
-<a class="btn" href="https://github.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/blob/main/reports/OWASP_Juice_Shop_Report.pdf">GitHub</a>
-<a class="btn" href="https://raw.githubusercontent.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/main/reports/OWASP_Juice_Shop_Report.pdf">Report</a>
+<b>Bachelor of Technology (Computer Science & Engineering)</b><br>
+Assam University, India
 </div>
 
 <!-- CERTIFICATIONS -->
-<h2>06. CERTIFICATIONS</h2>
+<h2 id="certs">Certifications</h2>
 <div class="card">
 Google Cybersecurity Foundations<br>
 Network Engineering Internship Certificate<br>
@@ -218,12 +248,11 @@ Advanced Java Programming
 </div>
 
 <!-- CONTACT -->
-<h2>07. ACCESS / CONTACT</h2>
+<h2 id="contact">Contact</h2>
 <div class="card">
-<b>Email:</b> sehbaabi@gmail.com<br>
-<b>Phone:</b> +64 210 871 4728<br>
-<b>Location:</b> Auckland, New Zealand
-<br><br>
+Email: sehbaabi@gmail.com<br>
+Phone: +64 210 871 4728<br>
+Location: Auckland, New Zealand<br><br>
 
 <a class="btn" href="https://github.com/">GitHub</a>
 <a class="btn" href="#">LinkedIn</a>
