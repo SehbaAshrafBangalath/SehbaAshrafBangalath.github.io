@@ -3,167 +3,152 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SOC Cyber Dashboard | Sehba Ashraf</title>
+<title>SOC Terminal | Sehba Ashraf</title>
 
 <style>
-/* ===== ADVANCED CYBER UI ===== */
-
+/* ===== BASE ===== */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #e5e7eb;
-    background: #050816;
+    font-family: 'Segoe UI', monospace;
+    background: #05070f;
+    color: #d1d5db;
     overflow-x: hidden;
 }
 
-/* animated gradient background */
+/* GRID BACKGROUND */
 body::before {
     content: "";
     position: fixed;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 20%, rgba(56,189,248,0.15), transparent 40%),
-                radial-gradient(circle at 80% 30%, rgba(0,255,150,0.12), transparent 40%),
-                radial-gradient(circle at 40% 80%, rgba(168,85,247,0.12), transparent 40%);
+    background-image: linear-gradient(rgba(0,255,140,0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0,255,140,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
     z-index: -2;
 }
 
-/* soft grid overlay */
-body::after {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    z-index: -1;
-    opacity: 0.4;
-}
-
-/* top bar */
+/* HEADER TERMINAL BAR */
 .topbar {
     display: flex;
     justify-content: space-between;
-    padding: 18px 24px;
-    background: rgba(10,15,30,0.7);
+    padding: 14px 20px;
+    background: rgba(10,15,25,0.85);
+    border-bottom: 1px solid rgba(0,255,140,0.2);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    position: sticky;
-    top: 0;
 }
 
 .title {
-    color: #38bdf8;
-    font-weight: 600;
-    letter-spacing: 1px;
+    color: #00ff9f;
+    font-weight: bold;
 }
 
-/* layout container */
+.status {
+    color: #38bdf8;
+}
+
+/* CONTAINER */
 .container {
     max-width: 1100px;
     margin: auto;
-    padding: 30px 20px;
+    padding: 25px;
 }
 
-/* headings */
+/* SECTIONS */
 h2 {
-    font-size: 20px;
-    margin-top: 45px;
     color: #38bdf8;
     border-left: 4px solid #00ff9f;
     padding-left: 12px;
+    margin-top: 40px;
+    font-size: 18px;
 }
 
-/* glass cards */
+/* GLASS CARD */
 .card {
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
+    border-left: 2px solid rgba(0,255,140,0.5);
     padding: 18px;
     margin-top: 15px;
-    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
     transition: 0.3s ease;
-    box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(56,189,248,0.6);
-    box-shadow: 0 10px 30px rgba(56,189,248,0.15);
+    transform: translateY(-5px);
+    border-left: 2px solid #00ff9f;
+    box-shadow: 0 10px 25px rgba(0,255,140,0.08);
 }
 
-/* tags */
+/* TAGS */
 .tag {
     display: inline-block;
-    padding: 5px 10px;
-    margin: 4px;
+    padding: 4px 10px;
+    margin: 3px;
     font-size: 12px;
     border-radius: 999px;
-    background: rgba(56,189,248,0.1);
-    color: #38bdf8;
-    border: 1px solid rgba(56,189,248,0.3);
+    background: rgba(0,255,140,0.08);
+    color: #00ff9f;
+    border: 1px solid rgba(0,255,140,0.2);
 }
 
-/* grid */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 18px;
-}
-
-/* buttons */
+/* BUTTONS */
 .btn {
     display: inline-block;
-    margin-top: 12px;
-    padding: 8px 12px;
-    border-radius: 10px;
-    border: 1px solid rgba(56,189,248,0.6);
-    color: #38bdf8;
+    margin-top: 10px;
+    padding: 7px 10px;
+    border: 1px solid #00ff9f;
+    color: #00ff9f;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 12px;
+    border-radius: 6px;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: #38bdf8;
+    background: #00ff9f;
     color: #000;
-    box-shadow: 0 0 20px rgba(56,189,248,0.4);
 }
 
-/* subtle glow text */
-.glow {
-    color: #00ff9f;
+/* TERMINAL TEXT */
+.terminal {
+    font-family: monospace;
+    color: #9ca3af;
 }
 </style>
+
 </head>
 
 <body>
 
+<!-- TOP BAR -->
 <div class="topbar">
-<div class="title">🔐 SOC CYBER DASHBOARD</div>
-<div class="glow">● ONLINE</div>
+<div class="title">root@SOC-terminal:~/portfolio</div>
+<div class="status">● SYSTEM ONLINE</div>
 </div>
 
 <div class="container">
 
 <!-- PROFILE -->
-<h2>👤 Profile Summary</h2>
-<div class="card">
-Aspiring Cybersecurity and Digital Forensics professional with hands-on experience in network security, vulnerability assessment, and web application testing. Strong foundation in Linux systems, networking, and SOC-style attack surface analysis. Seeking an Information Security / SOC Analyst internship.
+<h2>01. PROFILE</h2>
+<div class="card terminal">
+Cybersecurity & Digital Forensics student focused on SOC analysis, vulnerability research, and network security.
+Experience in OWASP Top 10 testing, CVE mapping, and Linux-based investigations.
+Seeking SOC Analyst / Cybersecurity Internship roles.
 </div>
 
 <!-- IDENTITY -->
-<h2>📍 Identity</h2>
+<h2>02. IDENTITY</h2>
 <div class="card">
 <b>Name:</b> Sehba Ashraf Bangalath<br>
+<b>Role:</b> SOC Analyst (Aspiring)<br>
 <b>Location:</b> Auckland, New Zealand<br>
 <b>Email:</b> sehbaabi@gmail.com<br>
 <b>Phone:</b> +64 210 871 4728
 </div>
 
 <!-- SKILLS -->
-<h2>🛠 Security Stack</h2>
+<h2>03. SECURITY TOOLKIT</h2>
 <div class="card">
 <span class="tag">Nmap</span>
 <span class="tag">Nikto</span>
@@ -176,40 +161,35 @@ Aspiring Cybersecurity and Digital Forensics professional with hands-on experien
 </div>
 
 <!-- EXPERIENCE -->
-<h2>💼 Experience</h2>
-
-<div class="grid">
+<h2>04. EXPERIENCE LOGS</h2>
 
 <div class="card">
-<b>Network Engineer Intern</b>
-<p>Cloudix Technologies Pvt Ltd</p>
+<b>Network Engineer Intern</b> | Cloudix Technologies
 <ul>
 <li>Network configuration & monitoring</li>
 <li>Security hardening & troubleshooting</li>
+<li>Incident-level network issue resolution</li>
 </ul>
 </div>
 
 <div class="card">
-<b>Web Developer Intern</b>
-<p>Brain O Vision</p>
+<b>Web Developer Intern</b> | Brain O Vision
 <ul>
-<li>Web development & UI optimization</li>
-<li>Security improvements in applications</li>
+<li>Web application development</li>
+<li>Basic secure coding practices</li>
+<li>UI optimization & debugging</li>
 </ul>
 </div>
 
-</div>
-
 <!-- PROJECTS -->
-<h2>🚨 Security Cases (Proof)</h2>
-
-<div class="grid">
+<h2>05. SECURITY OPERATIONS (PROJECTS)</h2>
 
 <div class="card">
 <b>Network Attack Surface Analysis</b>
 <ul>
-<li>Nmap reconnaissance & enumeration</li>
-<li>Identified exposed services</li>
+<li>Performed Nmap reconnaissance & enumeration</li>
+<li>Identified exposed services & risks</li>
+<li>Mapped attack surface vulnerabilities</li>
 </ul>
 
 <a class="btn" href="https://github.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/blob/main/reports/PROJECT_FIRST.pdf">GitHub</a>
@@ -217,25 +197,36 @@ Aspiring Cybersecurity and Digital Forensics professional with hands-on experien
 </div>
 
 <div class="card">
-<b>OWASP Juice Shop Testing</b>
+<b>OWASP Juice Shop Security Testing</b>
 <ul>
-<li>Vulnerability scanning & OWASP mapping</li>
-<li>Auth + injection flaw detection</li>
+<li>Gobuster & WhatWeb scanning</li>
+<li>Authentication flaw detection</li>
+<li>OWASP Top 10 mapping & reporting</li>
 </ul>
 
 <a class="btn" href="https://github.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/blob/main/reports/OWASP_Juice_Shop_Report.pdf">GitHub</a>
 <a class="btn" href="https://raw.githubusercontent.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/main/reports/OWASP_Juice_Shop_Report.pdf">Report</a>
 </div>
 
-</div>
-
 <!-- CERTIFICATIONS -->
-<h2>📜 Certifications</h2>
+<h2>06. CERTIFICATIONS</h2>
 <div class="card">
 Google Cybersecurity Foundations<br>
-Network Engineering Internship<br>
-Web Development Internship<br>
+Network Engineering Internship Certificate<br>
+Web Development Internship Certificate<br>
 Advanced Java Programming
+</div>
+
+<!-- CONTACT -->
+<h2>07. ACCESS / CONTACT</h2>
+<div class="card">
+<b>Email:</b> sehbaabi@gmail.com<br>
+<b>Phone:</b> +64 210 871 4728<br>
+<b>Location:</b> Auckland, New Zealand
+<br><br>
+
+<a class="btn" href="https://github.com/">GitHub</a>
+<a class="btn" href="#">LinkedIn</a>
 </div>
 
 </div>
