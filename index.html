@@ -9,71 +9,90 @@
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: #0a0f1c;
+        background: #050b18;
         color: #e2e8f0;
     }
 
-    /* HERO */
+    /* TERMINAL INTRO */
+    .terminal {
+        background: #000;
+        color: #00ff9f;
+        font-family: monospace;
+        padding: 80px 20px;
+        text-align: left;
+        min-height: 100vh;
+    }
+
+    .terminal p {
+        margin: 8px 0;
+        font-size: 15px;
+    }
+
+    .blink {
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+
+    /* MAIN DASHBOARD */
+    .dashboard {
+        display: none;
+        padding: 40px 20px;
+        max-width: 1100px;
+        margin: auto;
+    }
+
     header {
         text-align: center;
-        padding: 90px 20px 50px;
-        background: radial-gradient(circle at top, #0f172a, #020617);
+        padding: 40px 10px;
     }
 
     header h1 {
-        font-size: 44px;
-        margin: 0;
         color: #38bdf8;
-        letter-spacing: 1px;
+        font-size: 42px;
+        margin: 0;
     }
 
     header p {
         color: #94a3b8;
-        margin-top: 10px;
-        font-size: 16px;
-    }
-
-    .btns {
-        margin-top: 25px;
     }
 
     .btns a {
         display: inline-block;
         margin: 6px;
-        padding: 10px 16px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
+        padding: 10px 14px;
         border: 1px solid #38bdf8;
         color: #38bdf8;
+        text-decoration: none;
+        border-radius: 6px;
         transition: 0.3s;
     }
 
     .btns a:hover {
         background: #38bdf8;
-        color: #0a0f1c;
-    }
-
-    section {
-        max-width: 1050px;
-        margin: auto;
-        padding: 40px 20px;
+        color: #000;
     }
 
     h2 {
         color: #38bdf8;
         border-left: 4px solid #38bdf8;
-        padding-left: 12px;
-        margin-top: 55px;
+        padding-left: 10px;
+        margin-top: 50px;
     }
 
-    /* CARD */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 15px;
+    }
+
     .card {
         background: rgba(255,255,255,0.04);
         border: 1px solid rgba(255,255,255,0.08);
         padding: 18px;
         border-radius: 14px;
-        margin-top: 15px;
         transition: 0.3s;
     }
 
@@ -82,93 +101,79 @@
         border-color: #38bdf8;
     }
 
-    ul {
-        line-height: 1.8;
-    }
-
-    /* TAGS */
     .tags span {
         display: inline-block;
         background: #1e293b;
         color: #38bdf8;
-        padding: 6px 12px;
-        margin: 5px;
+        padding: 5px 10px;
+        margin: 4px;
         border-radius: 20px;
         font-size: 12px;
     }
 
-    /* PROJECT CARDS */
     .project-title {
-        font-size: 18px;
-        margin-bottom: 5px;
+        font-size: 16px;
+        margin-bottom: 8px;
         color: #f1f5f9;
     }
 
     .project-buttons a {
         display: inline-block;
         margin-top: 10px;
-        margin-right: 10px;
-        padding: 8px 12px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-size: 13px;
+        margin-right: 8px;
+        padding: 7px 10px;
         border: 1px solid #38bdf8;
         color: #38bdf8;
+        text-decoration: none;
+        font-size: 12px;
+        border-radius: 5px;
     }
 
     .project-buttons a:hover {
         background: #38bdf8;
-        color: #0a0f1c;
-    }
-
-    /* CONTACT */
-    .contact {
-        background: rgba(255,255,255,0.04);
-        padding: 18px;
-        border-radius: 14px;
-        border: 1px solid rgba(255,255,255,0.08);
+        color: #000;
     }
 
     footer {
         text-align: center;
-        padding: 25px;
-        background: #020617;
+        padding: 20px;
         color: #64748b;
-        margin-top: 50px;
-    }
-
-    /* SMALL NOTE BOX */
-    .note {
-        font-size: 13px;
-        color: #94a3b8;
-        margin-top: 5px;
+        margin-top: 40px;
     }
 </style>
 </head>
 
 <body>
 
+<!-- TERMINAL INTRO -->
+<div class="terminal" id="terminal">
+<p>Initializing Cybersecurity Profile...</p>
+<p>Loading modules: Nmap ✔ | Linux ✔ | OWASP ✔</p>
+<p>Scanning skills database...</p>
+<p>Detecting vulnerability analysis experience...</p>
+<p>Status: READY <span class="blink">_</span></p>
+<p style="color:#94a3b8; margin-top:20px;">Redirecting to SOC Dashboard...</p>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+
 <header>
     <h1>Sehba Ashraf Bangalath</h1>
-    <p>Cybersecurity | SOC Analyst (Aspiring) | Network Security | Vulnerability Research</p>
+    <p>SOC Analyst (Aspiring) | Cybersecurity | Network Security | Vulnerability Research</p>
 
     <div class="btns">
-        <a href="#projects">View Projects</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
         <a href="https://github.com/">GitHub</a>
         <a href="https://linkedin.com/">LinkedIn</a>
     </div>
 </header>
 
-<section>
-
-<h2>👤 About Me</h2>
+<h2>👤 About</h2>
 <div class="card">
-    <p>
-        Cybersecurity enthusiast with hands-on experience in network security, vulnerability assessment,
-        and web application testing. Skilled in OWASP Top 10, CVE analysis, reconnaissance, and Linux systems.
-        Focused on building practical security skills for SOC and vulnerability analyst roles.
-    </p>
+    Cybersecurity enthusiast with experience in network security, vulnerability assessment,
+    OWASP testing, CVE analysis, and Linux systems. Focused on SOC operations and real-world threat detection.
 </div>
 
 <h2>🛠 Skills</h2>
@@ -176,98 +181,73 @@
     <span>Nmap</span>
     <span>Nikto</span>
     <span>Gobuster</span>
-    <span>WhatWeb</span>
     <span>Linux</span>
-    <span>OWASP Top 10</span>
+    <span>OWASP</span>
     <span>CVE Analysis</span>
     <span>Python</span>
     <span>Networking</span>
-    <span>IAM Basics</span>
 </div>
 
-<h2>💼 Experience</h2>
+<h2 id="projects">🔐 Projects (Proof-Based)</h2>
+
+<div class="grid">
 
 <div class="card">
-    <h3>Network Engineer Intern – Cloudix Technologies</h3>
-    <p>Dec 2023 – Jun 2024</p>
+    <div class="project-title">Network Attack Surface Analysis</div>
     <ul>
-        <li>Configured routers and switches for secure infrastructure</li>
-        <li>Monitored network traffic and identified vulnerabilities</li>
-        <li>Improved uptime and troubleshooting efficiency</li>
-    </ul>
-</div>
-
-<div class="card">
-    <h3>Web Developer Intern – Brain O Vision</h3>
-    <p>Oct 2021</p>
-    <ul>
-        <li>Built web apps using HTML, CSS, JavaScript</li>
-        <li>Identified basic security flaws and improved code quality</li>
-    </ul>
-</div>
-
-<h2 id="projects">🔐 Cybersecurity Projects (Proof-Based)</h2>
-
-<div class="card">
-    <div class="project-title">Network Attack Surface Analysis (TryHackMe)</div>
-    <ul>
-        <li>Performed reconnaissance using Nmap and service enumeration</li>
-        <li>Identified exposed services (SSH, HTTP, SMB, Tomcat)</li>
-        <li>Mapped vulnerabilities to CVEs and proposed fixes</li>
+        <li>Nmap reconnaissance + service enumeration</li>
+        <li>Mapped vulnerabilities to CVEs</li>
     </ul>
     <div class="project-buttons">
-        <a href="#">GitHub Repo</a>
-        <a href="#">Write-up</a>
-    </div>
-</div>
-
-<div class="card">
-    <div class="project-title">OWASP Juice Shop Security Testing</div>
-    <ul>
-        <li>Performed directory brute-force using Gobuster</li>
-        <li>Identified authentication and input validation flaws</li>
-        <li>Mapped findings to OWASP Top 10 risks</li>
-    </ul>
-    <div class="project-buttons">
-        <a href="#">GitHub Repo</a>
+        <a href="#">GitHub</a>
         <a href="#">Report</a>
     </div>
 </div>
 
 <div class="card">
-    <div class="project-title">Linux Security & Network Labs</div>
+    <div class="project-title">OWASP Juice Shop Testing</div>
     <ul>
-        <li>Analyzed file permissions and system logs</li>
-        <li>Practiced service enumeration and system hardening</li>
+        <li>Found auth + input validation flaws</li>
+        <li>Mapped OWASP Top 10 risks</li>
+    </ul>
+    <div class="project-buttons">
+        <a href="#">GitHub</a>
+        <a href="#">Write-up</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="project-title">Linux Security Labs</div>
+    <ul>
+        <li>File permissions + log analysis</li>
+        <li>System hardening practice</li>
     </ul>
     <div class="project-buttons">
         <a href="#">Notes</a>
     </div>
 </div>
 
-<h2>📜 Certifications</h2>
-<div class="card">
-<ul>
-    <li>Google Cybersecurity Foundations (Coursera)</li>
-    <li>Network Engineer Internship – Cloudix Technologies</li>
-    <li>Web Development Internship – Brain O Vision</li>
-</ul>
 </div>
 
 <h2 id="contact">📫 Contact</h2>
-<div class="contact">
-    <p><b>Email:</b> sehbaabi@gmail.com</p>
-    <p><b>Phone:</b> +64 210 871 4728</p>
-    <p><b>LinkedIn:</b> Add URL</p>
-    <p><b>GitHub:</b> SehbaAshrafBangalath</p>
-    <p class="note">Open to Cybersecurity Internship opportunities in New Zealand</p>
+<div class="card">
+    <p>Email: sehbaabi@gmail.com</p>
+    <p>Phone: +64 210 871 4728</p>
+    <p>LinkedIn: Add link</p>
 </div>
-
-</section>
 
 <footer>
     © 2026 Sehba Ashraf | Cybersecurity Portfolio
 </footer>
+
+</div>
+
+<script>
+    setTimeout(() => {
+        document.getElementById("terminal").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+    }, 3000);
+</script>
 
 </body>
 </html>
