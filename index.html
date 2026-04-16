@@ -6,124 +6,134 @@
 <title>SOC Cyber Dashboard | Sehba Ashraf</title>
 
 <style>
-/* ===== CYBER THEME BASE ===== */
+/* ===== ADVANCED CYBER UI ===== */
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top, #0b1220, #000);
-    color: #e2e8f0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #e5e7eb;
+    background: #050816;
     overflow-x: hidden;
 }
 
-/* SCANLINES EFFECT */
+/* animated gradient background */
 body::before {
     content: "";
     position: fixed;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0,255,140,0.05),
-        rgba(0,255,140,0.05) 1px,
-        transparent 1px,
-        transparent 3px
-    );
-    pointer-events: none;
+    background: radial-gradient(circle at 20% 20%, rgba(56,189,248,0.15), transparent 40%),
+                radial-gradient(circle at 80% 30%, rgba(0,255,150,0.12), transparent 40%),
+                radial-gradient(circle at 40% 80%, rgba(168,85,247,0.12), transparent 40%);
+    z-index: -2;
 }
 
-/* TOP BAR */
+/* soft grid overlay */
+body::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* top bar */
 .topbar {
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px;
-    background: rgba(0,0,0,0.7);
-    border-bottom: 1px solid rgba(0,255,140,0.2);
-    box-shadow: 0 0 20px rgba(0,255,140,0.1);
+    padding: 18px 24px;
+    background: rgba(10,15,30,0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: sticky;
+    top: 0;
 }
 
 .title {
-    color: #00ff9f;
-    font-weight: bold;
-    text-shadow: 0 0 10px #00ff9f;
+    color: #38bdf8;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-/* SECTION HEADERS */
+/* layout container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+/* headings */
 h2 {
+    font-size: 20px;
+    margin-top: 45px;
     color: #38bdf8;
     border-left: 4px solid #00ff9f;
-    padding-left: 10px;
-    margin-top: 40px;
-    text-shadow: 0 0 10px rgba(56,189,248,0.4);
+    padding-left: 12px;
 }
 
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
-}
-
-/* CARD STYLE */
+/* glass cards */
 .card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(0,255,140,0.15);
-    padding: 16px;
-    border-radius: 12px;
-    transition: 0.3s;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 10px rgba(0,255,140,0.05);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 15px;
+    backdrop-filter: blur(12px);
+    transition: 0.3s ease;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
 .card:hover {
     transform: translateY(-6px);
-    border-color: #00ff9f;
-    box-shadow: 0 0 25px rgba(0,255,140,0.25);
+    border-color: rgba(56,189,248,0.6);
+    box-shadow: 0 10px 30px rgba(56,189,248,0.15);
 }
 
-/* TAGS (HACKER STYLE) */
+/* tags */
 .tag {
     display: inline-block;
-    background: rgba(0,255,140,0.1);
-    color: #00ff9f;
     padding: 5px 10px;
     margin: 4px;
-    border-radius: 20px;
     font-size: 12px;
-    border: 1px solid rgba(0,255,140,0.3);
+    border-radius: 999px;
+    background: rgba(56,189,248,0.1);
+    color: #38bdf8;
+    border: 1px solid rgba(56,189,248,0.3);
 }
 
-/* BUTTONS */
+/* grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+/* buttons */
 .btn {
     display: inline-block;
-    margin-top: 10px;
-    padding: 6px 10px;
-    border: 1px solid #00ff9f;
-    color: #00ff9f;
+    margin-top: 12px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(56,189,248,0.6);
+    color: #38bdf8;
     text-decoration: none;
-    font-size: 12px;
-    border-radius: 5px;
+    font-size: 13px;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: #00ff9f;
-    color: black;
-    box-shadow: 0 0 15px #00ff9f;
+    background: #38bdf8;
+    color: #000;
+    box-shadow: 0 0 20px rgba(56,189,248,0.4);
 }
 
-/* GLITCH HEADER EFFECT */
+/* subtle glow text */
 .glow {
-    text-shadow:
-        0 0 5px #00ff9f,
-        0 0 10px #00ff9f,
-        0 0 20px #38bdf8;
-}
-
-/* LAYOUT */
-.container {
-    padding: 20px;
-    max-width: 1100px;
-    margin: auto;
+    color: #00ff9f;
 }
 </style>
 </head>
@@ -132,22 +142,18 @@ h2 {
 
 <div class="topbar">
 <div class="title">🔐 SOC CYBER DASHBOARD</div>
-<div style="color:#00ff9f;">● SYSTEM ONLINE</div>
+<div class="glow">● ONLINE</div>
 </div>
 
 <div class="container">
 
 <!-- PROFILE -->
-<h2 class="glow">👤 Profile Summary</h2>
+<h2>👤 Profile Summary</h2>
 <div class="card">
-Aspiring Cybersecurity and Digital Forensics professional with hands-on experience in network security, vulnerability assessment, and web application testing. Strong foundation in Linux systems, networking, and security tools used for real-world attack surface analysis.
-
-Experienced in OWASP Top 10-based testing, CVE analysis, and identifying system misconfigurations through structured reconnaissance and vulnerability scanning. Skilled in documenting security findings, risk analysis, and proposing practical mitigation strategies.
-
-Seeking an Information Security / SOC Analyst internship to contribute to secure infrastructure, threat detection, and system hardening in real-world environments.
+Aspiring Cybersecurity and Digital Forensics professional with hands-on experience in network security, vulnerability assessment, and web application testing. Strong foundation in Linux systems, networking, and SOC-style attack surface analysis. Seeking an Information Security / SOC Analyst internship.
 </div>
 
-<!-- PERSONAL -->
+<!-- IDENTITY -->
 <h2>📍 Identity</h2>
 <div class="card">
 <b>Name:</b> Sehba Ashraf Bangalath<br>
@@ -170,13 +176,13 @@ Seeking an Information Security / SOC Analyst internship to contribute to secure
 </div>
 
 <!-- EXPERIENCE -->
-<h2>💼 Operational Experience</h2>
+<h2>💼 Experience</h2>
 
 <div class="grid">
 
 <div class="card">
-<b>Network Engineer Intern</b><br>
-Cloudix Technologies Pvt Ltd
+<b>Network Engineer Intern</b>
+<p>Cloudix Technologies Pvt Ltd</p>
 <ul>
 <li>Network configuration & monitoring</li>
 <li>Security hardening & troubleshooting</li>
@@ -184,11 +190,11 @@ Cloudix Technologies Pvt Ltd
 </div>
 
 <div class="card">
-<b>Web Developer Intern</b><br>
-Brain O Vision
+<b>Web Developer Intern</b>
+<p>Brain O Vision</p>
 <ul>
-<li>Web development + basic security fixes</li>
-<li>UI + application optimization</li>
+<li>Web development & UI optimization</li>
+<li>Security improvements in applications</li>
 </ul>
 </div>
 
@@ -200,32 +206,25 @@ Brain O Vision
 <div class="grid">
 
 <div class="card">
-<b>Attack Surface Analysis</b>
+<b>Network Attack Surface Analysis</b>
 <ul>
 <li>Nmap reconnaissance & enumeration</li>
 <li>Identified exposed services</li>
 </ul>
-<a class="btn" href="#">GitHub Repo</a>
-<a class="btn" href="#">Report</a>
+
+<a class="btn" href="https://github.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/blob/main/reports/PROJECT_FIRST.pdf">GitHub</a>
+<a class="btn" href="https://raw.githubusercontent.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/main/reports/PROJECT_FIRST.pdf">Report</a>
 </div>
 
 <div class="card">
-<b>OWASP Testing</b>
+<b>OWASP Juice Shop Testing</b>
 <ul>
-<li>Injection & auth flaw detection</li>
-<li>OWASP Top 10 mapping</li>
+<li>Vulnerability scanning & OWASP mapping</li>
+<li>Auth + injection flaw detection</li>
 </ul>
-<a class="btn" href="#">GitHub Repo</a>
-<a class="btn" href="#">Write-up</a>
-</div>
 
-<div class="card">
-<b>Linux Security Lab</b>
-<ul>
-<li>Permissions & logs analysis</li>
-<li>System hardening practice</li>
-</ul>
-<a class="btn" href="#">Notes</a>
+<a class="btn" href="https://github.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/blob/main/reports/OWASP_Juice_Shop_Report.pdf">GitHub</a>
+<a class="btn" href="https://raw.githubusercontent.com/SehbaAshrafBangalath/SehbaAshrafBangalath.github.io/main/reports/OWASP_Juice_Shop_Report.pdf">Report</a>
 </div>
 
 </div>
