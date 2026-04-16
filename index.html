@@ -2,66 +2,83 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Sehba Ashraf | Cybersecurity Portfolio</title>
 
 <style>
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: #0f172a;
+        background: #0a0f1c;
         color: #e2e8f0;
     }
 
+    /* HERO */
     header {
         text-align: center;
-        padding: 70px 20px 40px;
-        background: linear-gradient(180deg, #020617, #0f172a);
+        padding: 90px 20px 50px;
+        background: radial-gradient(circle at top, #0f172a, #020617);
     }
 
     header h1 {
-        font-size: 40px;
+        font-size: 44px;
         margin: 0;
         color: #38bdf8;
+        letter-spacing: 1px;
     }
 
     header p {
-        margin-top: 10px;
         color: #94a3b8;
+        margin-top: 10px;
         font-size: 16px;
     }
 
-    .links a {
-        color: #38bdf8;
-        margin: 0 10px;
+    .btns {
+        margin-top: 25px;
+    }
+
+    .btns a {
+        display: inline-block;
+        margin: 6px;
+        padding: 10px 16px;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: bold;
+        border: 1px solid #38bdf8;
+        color: #38bdf8;
+        transition: 0.3s;
+    }
+
+    .btns a:hover {
+        background: #38bdf8;
+        color: #0a0f1c;
     }
 
     section {
-        max-width: 950px;
+        max-width: 1050px;
         margin: auto;
         padding: 40px 20px;
     }
 
     h2 {
         color: #38bdf8;
-        margin-bottom: 10px;
         border-left: 4px solid #38bdf8;
-        padding-left: 10px;
+        padding-left: 12px;
+        margin-top: 55px;
     }
 
+    /* CARD */
     .card {
         background: rgba(255,255,255,0.04);
         border: 1px solid rgba(255,255,255,0.08);
         padding: 18px;
         border-radius: 14px;
-        margin: 15px 0;
+        margin-top: 15px;
         transition: 0.3s;
     }
 
     .card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
         border-color: #38bdf8;
     }
 
@@ -69,16 +86,42 @@
         line-height: 1.8;
     }
 
+    /* TAGS */
     .tags span {
         display: inline-block;
         background: #1e293b;
         color: #38bdf8;
-        padding: 5px 10px;
+        padding: 6px 12px;
         margin: 5px;
         border-radius: 20px;
         font-size: 12px;
     }
 
+    /* PROJECT CARDS */
+    .project-title {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #f1f5f9;
+    }
+
+    .project-buttons a {
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 10px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 13px;
+        border: 1px solid #38bdf8;
+        color: #38bdf8;
+    }
+
+    .project-buttons a:hover {
+        background: #38bdf8;
+        color: #0a0f1c;
+    }
+
+    /* CONTACT */
     .contact {
         background: rgba(255,255,255,0.04);
         padding: 18px;
@@ -88,10 +131,17 @@
 
     footer {
         text-align: center;
-        padding: 20px;
-        color: #64748b;
+        padding: 25px;
         background: #020617;
-        margin-top: 40px;
+        color: #64748b;
+        margin-top: 50px;
+    }
+
+    /* SMALL NOTE BOX */
+    .note {
+        font-size: 13px;
+        color: #94a3b8;
+        margin-top: 5px;
     }
 </style>
 </head>
@@ -100,9 +150,10 @@
 
 <header>
     <h1>Sehba Ashraf Bangalath</h1>
-    <p>Cybersecurity Enthusiast | Network Security | Vulnerability Assessment | Web Security</p>
+    <p>Cybersecurity | SOC Analyst (Aspiring) | Network Security | Vulnerability Research</p>
 
-    <div class="links">
+    <div class="btns">
+        <a href="#projects">View Projects</a>
         <a href="#contact">Contact</a>
         <a href="https://github.com/">GitHub</a>
         <a href="https://linkedin.com/">LinkedIn</a>
@@ -114,9 +165,9 @@
 <h2>👤 About Me</h2>
 <div class="card">
     <p>
-        Aspiring cybersecurity professional with hands-on experience in network security,
-        vulnerability assessment, and web application testing. Passionate about OWASP Top 10,
-        CVE analysis, and securing real-world systems through practical labs and research.
+        Cybersecurity enthusiast with hands-on experience in network security, vulnerability assessment,
+        and web application testing. Skilled in OWASP Top 10, CVE analysis, reconnaissance, and Linux systems.
+        Focused on building practical security skills for SOC and vulnerability analyst roles.
     </p>
 </div>
 
@@ -127,12 +178,11 @@
     <span>Gobuster</span>
     <span>WhatWeb</span>
     <span>Linux</span>
-    <span>Windows Security</span>
     <span>OWASP Top 10</span>
+    <span>CVE Analysis</span>
     <span>Python</span>
-    <span>SQL</span>
     <span>Networking</span>
-    <span>Cloud Basics</span>
+    <span>IAM Basics</span>
 </div>
 
 <h2>💼 Experience</h2>
@@ -141,10 +191,9 @@
     <h3>Network Engineer Intern – Cloudix Technologies</h3>
     <p>Dec 2023 – Jun 2024</p>
     <ul>
-        <li>Configured routers and switches for secure network operations</li>
-        <li>Monitored network performance and identified vulnerabilities</li>
-        <li>Troubleshot connectivity and improved system uptime</li>
-        <li>Implemented secure access control mechanisms</li>
+        <li>Configured routers and switches for secure infrastructure</li>
+        <li>Monitored network traffic and identified vulnerabilities</li>
+        <li>Improved uptime and troubleshooting efficiency</li>
     </ul>
 </div>
 
@@ -152,57 +201,66 @@
     <h3>Web Developer Intern – Brain O Vision</h3>
     <p>Oct 2021</p>
     <ul>
-        <li>Built web applications using HTML, CSS, JavaScript</li>
-        <li>Improved secure coding practices</li>
-        <li>Identified and fixed basic security issues</li>
+        <li>Built web apps using HTML, CSS, JavaScript</li>
+        <li>Identified basic security flaws and improved code quality</li>
     </ul>
 </div>
 
-<h2>🔐 Projects</h2>
+<h2 id="projects">🔐 Cybersecurity Projects (Proof-Based)</h2>
 
 <div class="card">
-    <h3>Network Attack Surface Analysis (TryHackMe)</h3>
+    <div class="project-title">Network Attack Surface Analysis (TryHackMe)</div>
     <ul>
-        <li>Performed reconnaissance using Nmap</li>
-        <li>Identified open services (SSH, HTTP, SMB, Tomcat)</li>
-        <li>Mapped vulnerabilities to CVEs</li>
+        <li>Performed reconnaissance using Nmap and service enumeration</li>
+        <li>Identified exposed services (SSH, HTTP, SMB, Tomcat)</li>
+        <li>Mapped vulnerabilities to CVEs and proposed fixes</li>
     </ul>
+    <div class="project-buttons">
+        <a href="#">GitHub Repo</a>
+        <a href="#">Write-up</a>
+    </div>
 </div>
 
 <div class="card">
-    <h3>OWASP Juice Shop Testing</h3>
+    <div class="project-title">OWASP Juice Shop Security Testing</div>
     <ul>
-        <li>Performed endpoint enumeration using Gobuster</li>
-        <li>Identified authentication and input flaws</li>
-        <li>Analyzed OWASP Top 10 risks</li>
+        <li>Performed directory brute-force using Gobuster</li>
+        <li>Identified authentication and input validation flaws</li>
+        <li>Mapped findings to OWASP Top 10 risks</li>
     </ul>
+    <div class="project-buttons">
+        <a href="#">GitHub Repo</a>
+        <a href="#">Report</a>
+    </div>
 </div>
 
 <div class="card">
-    <h3>Linux Security Labs</h3>
+    <div class="project-title">Linux Security & Network Labs</div>
     <ul>
         <li>Analyzed file permissions and system logs</li>
-        <li>Practiced service enumeration</li>
-        <li>Strengthened Linux security understanding</li>
+        <li>Practiced service enumeration and system hardening</li>
     </ul>
+    <div class="project-buttons">
+        <a href="#">Notes</a>
+    </div>
 </div>
 
 <h2>📜 Certifications</h2>
 <div class="card">
-    <ul>
-        <li>Google Cybersecurity Foundations (Coursera)</li>
-        <li>Network Engineer Internship – Cloudix Technologies</li>
-        <li>Web Development Internship – Brain O Vision</li>
-        <li>Advanced Java Programming – IIT</li>
-    </ul>
+<ul>
+    <li>Google Cybersecurity Foundations (Coursera)</li>
+    <li>Network Engineer Internship – Cloudix Technologies</li>
+    <li>Web Development Internship – Brain O Vision</li>
+</ul>
 </div>
 
 <h2 id="contact">📫 Contact</h2>
 <div class="contact">
     <p><b>Email:</b> sehbaabi@gmail.com</p>
     <p><b>Phone:</b> +64 210 871 4728</p>
-    <p><b>LinkedIn:</b> Add your link</p>
+    <p><b>LinkedIn:</b> Add URL</p>
     <p><b>GitHub:</b> SehbaAshrafBangalath</p>
+    <p class="note">Open to Cybersecurity Internship opportunities in New Zealand</p>
 </div>
 
 </section>
